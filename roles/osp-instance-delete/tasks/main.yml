@@ -10,5 +10,7 @@
     os_server:
         name: "{{ item.name }}"
         state: absent
-    when:  item.metadata.deployment_name == 'QA'
+    when:
+      - item.metadata.deployment_name
+      - item.metadata.deployment_name == 'QA')
     with_items: "{{result.ansible_facts.openstack_servers}}"
