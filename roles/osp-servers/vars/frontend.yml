@@ -6,5 +6,4 @@ image: rhel-guest
 key_name: ansible_ssh
 flavor: m2.small
 security_group: frontend
-meta:
-  - { group: frontends, deployment_name: QA}
+meta: {group: frontends, deployment_name: QA}
