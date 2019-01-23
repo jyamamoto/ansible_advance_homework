@@ -11,6 +11,6 @@
         name: "{{ item.name }}"
         state: absent
     when:
-      - item.metadata.deployment_name
+      - item.metadata.deployment_name is defined
       - item.metadata.deployment_name == 'QA')
     with_items: "{{result.ansible_facts.openstack_servers}}"
